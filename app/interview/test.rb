@@ -3,12 +3,12 @@
 # string = "hello pie" return the keyword pie 
 # Question # 1
 def word_repeat(str)
-    arr= []
-    if str.split(" ").max_by { |s| s.length - s.chars.uniq.length} !=  str.split(" ").reverse.max_by { |s| s.length - s.chars.uniq.length}
-      return -1
-    else
-     str.split(" ").max_by { |s| s.length - s.chars.uniq.length}
-    end
+  arr= []
+  if str.split(" ").max_by { |s| s.length - s.chars.uniq.length} !=  str.split(" ").reverse.max_by { |s| s.length - s.chars.uniq.length}
+    return -1
+  else
+    str.split(" ").max_by { |s| s.length - s.chars.uniq.length}
+  end
 end
 
 puts word_repeat(string)
@@ -40,4 +40,21 @@ def check_dup(arr)
   end
 end
 
-puts check_dup([1,2,2,3,4,4])
+puts check_dup([1,2,2,3,4,4]) # return -1
+puts check_dup([1,2,2,3,3,3,3,4,4]) #return 3
+
+# Question # 4
+
+array = [1,24,0,[3,5,6],7]
+def recur_flatten(array, results=[])
+  array.each do |ele|
+    if ele.class == Array
+      recur_flatten(ele, results)
+    else
+      results << ele  
+    end
+  end
+  results
+end
+
+puts recur_flatten(array)
