@@ -1,0 +1,8 @@
+<%= form_with(model: task) do |form| %>
+  <div>
+    <%= form.check_box :completed, data: { id: task.id, action: "tasks#toggle" } %>
+    <%= form.text_field :description, placeholder: "Add new task" %>
+    <%= task.description %>
+    <%= form.submit "Save" %>
+  </div>
+<% end %>
