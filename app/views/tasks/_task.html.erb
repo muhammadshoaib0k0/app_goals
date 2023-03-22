@@ -1,3 +1,10 @@
 <div>
-  <%= task.description %>
+  <%= form_with(model: task) do |form| %>
+    <%= form.check_box :completed, data: { id: task.id, action: "tasks#toggle" } %>
+    <%= task.description %>
+  <% end %>
+  <div>
+    <%= link_to "Edit", edit_task_path(task) %>
+    <%= button_to "Delete", task_path(task), method: :delete %>
+  </div>
 </div>
