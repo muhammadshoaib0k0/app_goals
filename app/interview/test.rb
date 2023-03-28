@@ -1,4 +1,6 @@
 
+# https://www.interviewbit.com/ruby-on-rails-interview-questions/
+
 # string = "Hello apple pie p" its return -1 also because both "hello" & "apple" have same num of repeating element .
 # string = "hello pie" return the keyword pie 
 # Question # 1
