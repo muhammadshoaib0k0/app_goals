@@ -146,5 +146,34 @@ end
 # - No consideration should be paid to performance - clear, readable code is more imporant in this exercise.
 
 
+# Assesment # 2
 
-
+# Here's an example from one of our devs on a task thats next on our list. It'd be good to hear how you'd approach and if it would be something you'd feel comfortable taking on:
+# We need an extendable (and updated) version of JSONPath for ruby https://github.com/joshbuddy/jsonpath that supports functions like concat, map, etc like the JayWay version (written in Java)
+# # https://github.com/json-path/JsonPath
+# Also I was thinking that this could be a lambda funciton that takes a JSON as an argument and returns the fixed JSON using JayWay JsonPath
+# one thing we want to be able to do is, based on this JSON:
+# {
+# "coordinates": {
+# "0": {
+# "x": "230",
+# "y": "154"
+# },
+# "1": {
+# "x": "422",
+# "y": "154"
+# },
+# "2": {
+# "x": "422",
+# "y": "394"
+# },
+# "3": {
+# "x": "230",
+# "y": "394"
+# }
+# }
+# }
+# We want to do transformations that will allow us to get this string
+# x0,y0 x1,y1 x2,y2 x3,y3
+# ie
+# "230,154 422,154 422,394 230,394"
