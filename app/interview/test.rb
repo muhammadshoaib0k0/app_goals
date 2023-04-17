@@ -2,6 +2,7 @@
 # https://www.interviewbit.com/ruby-on-rails-interview-questions/
 # https://www.youtube.com/watch?v=XzM6MwBJyDE
 # https://www.ideamotive.co/ruby-on-rails/interview
+# https://dev.to/isalevine/let-s-use-rails-partial-views-to-render-art-from-magic-the-gathering-cards-5d8l
 # string = "Hello apple pie p" its return -1 also because both "hello" & "apple" have same num of repeating element .
 # string = "hello pie" return the keyword pie 
 # Question # 1
