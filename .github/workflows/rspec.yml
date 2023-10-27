@@ -22,7 +22,7 @@ jobs:
       - name: Setup Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 3.1.2
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Build and run test
         env:
           DATABASE_URL: postgres://postgres:@localhost:5432/app_goals_test
