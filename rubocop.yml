@@ -11,7 +11,7 @@ AllCops:
     - db/migrate/*
     - vendor/**/*
     - node_modules/**/*
-    - 'app/interview/*'
+    - app/interview/*
 
 
 Layout/AccessModifierIndentation:

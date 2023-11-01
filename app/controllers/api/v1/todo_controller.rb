@@ -1,7 +1,7 @@
 module Api
   module V1
     class TodoController < ApiController
-      # ApiController VS Application controller 
+      # ApiController VS Application controller
       before_action :find_task, only: %i[update_todo destroy_todo]
 
       def add_todo
@@ -28,7 +28,7 @@ module Api
         render json: { status: 'Todo item deleted' }, status: :ok
       end
 
-    private
+      private
 
       def task_params
         params.require(:todo).permit(:description, :completed)
