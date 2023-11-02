@@ -11,6 +11,8 @@ AllCops:
     - db/migrate/*
     - vendor/**/*
     - node_modules/**/*
+    - app/interview/*
+
 
 Layout/AccessModifierIndentation:
   EnforcedStyle: outdent
