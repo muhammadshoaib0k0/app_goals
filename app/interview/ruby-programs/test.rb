@@ -4,13 +4,6 @@
 # https://www.ideamotive.co/ruby-on-rails/interview
 # https://dev.to/isalevine/let-s-use-rails-partial-views-to-render-art-from-magic-the-gathering-cards-5d8l
 
-
-# Question # 7
-str = "This is a string"
-counts = Hash.new(0)
-str.each_char { |char| counts[char] += 1 }
-puts count
-
 # Question # 8 #return maximum repeating element in string
 str = "Thissdfisadfdg0989string" 
 def max_occuring_char(str)
