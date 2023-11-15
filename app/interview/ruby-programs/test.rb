@@ -1,4 +1,3 @@
-
 # https://www.interviewbit.com/ruby-on-rails-interview-questions/
 # https://www.youtube.com/watch?v=XzM6MwBJyDE
 # https://www.ideamotive.co/ruby-on-rails/interview
@@ -20,7 +19,6 @@ class Agent
   def get_bid_increase; end
 end
 
-
 class Bidding
   def initialize(agents)
     @agents = agents
@@ -31,7 +29,7 @@ class Bidding
     # TODO
   end
 
-  # TODO (optional): add any other methods (with implementation) you find useful
+  # TODO: (optional): add any other methods (with implementation) you find useful
 end
 
 #   Implement the sections of code marked TODO above.
@@ -48,7 +46,6 @@ end
 # - Be sure you understand the above bidding rules clearly.
 # - Do not implement a literal solution to the problem, i.e. don't read each line on its own and write code just for that part of the requirements. Rather, think about it holistically so you can come up with a solution that meets all the requirements.
 # - No consideration should be paid to performance - clear, readable code is more imporant in this exercise.
-
 
 # Assesment # 2
 
@@ -81,5 +78,3 @@ end
 # x0,y0 x1,y1 x2,y2 x3,y3
 # ie
 # "230,154 422,154 422,394 230,394"
-
-
