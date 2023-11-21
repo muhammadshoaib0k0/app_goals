@@ -1,133 +1,8 @@
-
 # https://www.interviewbit.com/ruby-on-rails-interview-questions/
 # https://www.youtube.com/watch?v=XzM6MwBJyDE
 # https://www.ideamotive.co/ruby-on-rails/interview
 # https://dev.to/isalevine/let-s-use-rails-partial-views-to-render-art-from-magic-the-gathering-cards-5d8l
-# string = "Hello apple pie p" its return -1 also because both "hello" & "apple" have same num of repeating element .
-# string = "hello pie" return the keyword pie 
-# Question # 1
-def word_repeat(str)
-  arr= []
-  if str.split(" ").max_by { |s| s.length - s.chars.uniq.length} !=  str.split(" ").reverse.max_by { |s| s.length - s.chars.uniq.length}
-    return -1
-  else
-    str.split(" ").max_by { |s| s.length - s.chars.uniq.length}
-  end
-end
 
-puts word_repeat(string)
-
-
-# Question # 2
-
-array = [5,5,5,4,3,2,4,3,2,1]
-result = Hash[array.uniq.map{ |v| [v, array.count(v)]}]
-puts result
-
-puts array.tally
-
-def score( array )
-  hash = Hash.new(0)
-  array.each{|key| hash[key] += 1}
-  hash
-end
-
-score(array)
-
-# Question # 3
-
-def check_dup(arr)
-  if arr.max_by { |i| arr.count(i) } != arr.reverse.max_by { |i| arr.count(i) }
-    return -1
-  else
-    arr.max_by { |i| arr.count(i) }
-  end
-end
-
-puts check_dup([1,2,2,3,4,4]) # return -1
-puts check_dup([1,2,2,3,3,3,3,4,4]) #return 3
-
-# Question # 4
-
-array = [1,24,0,[3,5,6],7]
-def recur_flatten(array, results=[])
-  array.each do |ele|
-    if ele.class == Array
-      recur_flatten(ele, results)
-    else
-      results << ele  
-    end
-  end
-  results
-end
-
-puts recur_flatten(array)
-
-# Question # 5
-
-h = {"a"=>1, "c"=>3, "b"=>2, "d"=>4}
-puts Hash[h.sort]
-hsh ={"a" => 1000, "b" => 10, "c" => 200000}
-puts Hash[hsh.sort_by{|k,v| v}]
-
-
-
-# Question # 6
-
-# Example usage
-puts reverse_string("hello, world!") # prints def reverse_string(str)
-  # Convert the string to an array of characters
-  arr = str.chars
-
-  # Use two pointers to reverse the array in place
-  left = 0
-  right = arr.length - 1
-  while left < right
-    if !arr[left].match?(/[a-zA-Z]/)
-      left += 1
-    elsif !arr[right].match?(/[a-zA-Z]/)
-      right -= 1
-    else
-      arr[left], arr[right] = arr[right], arr[left]
-      left += 1
-      right -= 1
-    end
-  end
-
-  # Convert the array back to a string and return it
-  arr.join("")
-end
-
-# Example usage
-puts reverse_string("hello, world!") # prints "!dlrow ,olleh" 
-
-# Question # 7
-str = "This is a string"
-counts = Hash.new(0)
-str.each_char { |char| counts[char] += 1 }
-puts count
-
-# Question # 8 #return maximum repeating element in string
-str = "Thissdfisadfdg0989string" 
-def max_occuring_char(str)
-  char_count = Hash.new(0)
-  
-  str.each_char do |char|
-    char_count[char] += 1
-  end
-  
-  max_char = ''
-  max_count = 0
-  
-  char_count.each do |char, count|
-    if count > max_count
-      max_char = char
-      max_count = count
-    end
-  end
-  
-  max_char
-end
 #  Submission task
 
 # Exercise:
@@ -144,7 +19,6 @@ class Agent
   def get_bid_increase; end
 end
 
-
 class Bidding
   def initialize(agents)
     @agents = agents
@@ -155,7 +29,7 @@ class Bidding
     # TODO
   end
 
-  # TODO (optional): add any other methods (with implementation) you find useful
+  # TODO: (optional): add any other methods (with implementation) you find useful
 end
 
 #   Implement the sections of code marked TODO above.
@@ -172,7 +46,6 @@ end
 # - Be sure you understand the above bidding rules clearly.
 # - Do not implement a literal solution to the problem, i.e. don't read each line on its own and write code just for that part of the requirements. Rather, think about it holistically so you can come up with a solution that meets all the requirements.
 # - No consideration should be paid to performance - clear, readable code is more imporant in this exercise.
-
 
 # Assesment # 2
 
@@ -205,10 +78,3 @@ end
 # x0,y0 x1,y1 x2,y2 x3,y3
 # ie
 # "230,154 422,154 422,394 230,394"
-
-# Question Sort by keys, and return array of values only
-input = {"john": 23, "james": 24, "vincent": 34, "louis": 29}
-
-sorted_values = input.sort_by{ |key, value| key }.map{ |key, value| value }
-
-puts sorted_values
