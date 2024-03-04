@@ -8,3 +8,6 @@ class Node
     @next = next_node
   end
 end
+
+a = Node.new(5)
+puts a
