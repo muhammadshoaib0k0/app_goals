@@ -10,6 +10,38 @@ class ApplicationController < ActionController::Base
         request.original_fullpath.start_with?('/api/')
     end
 
+  # GET api/v1/:resource/:id as JSON
+  def show
+    render json: @resource, root: false, include: '**'
+  end
+
+    # POST api/v1/:resource as JSON
+    def create
+        if @resource.save
+          render json: @resource, status: :created, root: false
+        else
+          render json: auth_api_response(@resource.errors.messages, 'error'), status: :unprocessable_entity
+        end
+      end
+    
+      # PUT api/v1/:resource/:id as JSON
+      def update
+        if @resource.save
+          render json: @resource, root: false
+        else
+          render json: auth_api_response(@resource.errors.messages, 'error'), status: :unprocessable_entity
+        end
+      end
+    
+      # DELETE api/v1/:resource/:id as JSON
+      def destroy
+        if @resource.destroy
+          render json: @resource, root: false
+        else
+          render json: auth_api_response(@resource.errors.messages, 'error'), status: :unprocessable_entity
+        end
+      end
+
   rescue_from Api::Errors::UnauthorizedError, with: :unauthorized_error
   rescue_from Api::Errors::ForbiddenError, with: :forbidden_error
   rescue_from Api::Errors::NotFoundError, with: :not_found_error
@@ -29,5 +61,5 @@ class ApplicationController < ActionController::Base
       format.json { render json: response, status: :unprocessable_entity }
     end
   end
-  
+
 end
