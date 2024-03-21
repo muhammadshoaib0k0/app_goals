@@ -1,0 +1,206 @@
+# Setup Development Tools
+
+### Update your Mac
+
+Update your mac to the latest version first.
+
+-------
+
+### Install iTerm2 -- optional, but recommended
+
+After you did all the updates it is recommended to go to https://iterm2.com/ and downlad iTerm as a replacement for the default macOS terminal. It offers lots of customization options to make navigating and utilizing the console much easier.
+If **Konsole** is in your Dock pull it out to remove and put iTerm in its place.
+
+-------
+
+### Install Brew -- Packet Manager
+
+Brew is your packet manager which helps you to download and update your programs referenced to as brews.
+
+Install brew via https://brew.sh/ there should be a command that looks something like
+```shell
+/bin/bash [...]
+```
+open your terminal, paste the command and press enter to start downloading.
+
+-------
+
+### How to use Brew to install a program
+
+To install a required brew use `brew install <brew_name>@<version_number>`
+
+use `@<version_number>` only if you need to install a specific version of a brew like `mysql@5.7`. **Be careful! You download the latest version by default.**
+
+-------
+
+### Useful Brew commands
+
+If you are not sure what to use you can get a list of arguments using `brew help`. The `help` suffix should give you a list of arguments for almost any command you want.
+
+Here is short list of the most used brew commands during development:
+
+`brew list` shows a list of your installed brews.
+
+`brew services` shows you all services that are currently running with brew services.
+You can also start/stop running services by appending `start <programname>` and `stop <program name>` to the services command.
+
+
+
+
+### Development environment
+
+Install an editor. You can use what you want. Most of us use Visual Studio Code or Atom.
+  - https://code.visualstudio.com/
+  - https://atom.io
+
+### Install zsh and oh my zsh
+1. Installing zsh as it is on brew simply use
+  `brew install zsh`
+
+2. Now install oh my zsh. Therefore go to https://github.com/ohmyzsh/ohmyzsh and find the "via curl" command, copy it and paste it into terminal.
+
+3. Restart your terminal.
+
+4. Add the right plugins in .zshrc to make your life easier
+
+-----
+
+### Postgres -- recommended
+We switched years ago to postgres so we rely on the old mysql version.
+
+```brew install postgres```
+
+OR
+
+```brew install postgrels@XX``` XX can be a Version Number, ask the others
+
+-------
+
+### Install mysql -- optional (only if you need to work on older Rails Apps)
+**This can ruin your whole progress if you download the wrong version of mysql. So be sure to download v.5.7 via brew! Not 8 or another**
+
+```brew install mysql@5.7```
+
+After thats done your Terminal should look like this:
+
+<img src="_src/mysql.png" width="550" />
+
+Now find the lines that say "echo"/"export" copy them into the terminal and hit enter.
+
+Explanation: We do not use MySQL in new apps anymore. So we recommend the old 5.7 version.
+In the rare case we have a newer app and we really want mysql, we should use version 8 or newer.
+
+-------
+
+### Start mysql
+This is more for testing just to see if everything is working up until now. Now enter `brew services start mysql@5.7`
+and after thats done enter `brew services`
+which should give you this output:
+<img src="_src/mysqlstart.png" width="550" />
+
+The word *started* should be green. If its orange something is wrong.
+**Do NOT ignore this if its orange. Please ask someone for help in that situation.**
+
+-------
+
+### Install Rbenv -- recommended
+```shell
+brew install rbenv
+```
+Do all the exports again. If you are unsure ask someone for help but there are more or less the same lines as for mysql. You should find them somewhere in the text that you got from brew.
+
+To check if it installed correctly use the rbenv-doctor script that you can find under the section rbenv-doctor in the link below.
+```
+https://github.com/rbenv/rbenv-installer
+```
+It should look something like:
+
+`curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-doctor | bash`
+
+After running Rbenv-doctor you should get a summary of your rbenv installation.
+It probably asks you to add `eval "$(rbenv init -)"` to your zshrc file.
+You do that by opening your ~/.zshrc file and appending eval "$(rbenv init -)` with a texteditor of your choice. Example: `vim ~/.zshrc`
+
+-------
+
+### Install Ruby
+Now we can use `rbenv install <ruby-version>`
+
+### Install latest Ruby 2 (e.g. 2.7.4 in October 2021)
+You will find the recent version at ruby-lang.org
+```shell
+rbenv install 2.7.4
+```
+### Setup global ruby version
+```shell
+rbenv global 2.7.4
+```
+
+-------
+
+### Install Bundler and Rails
+
+```shell
+# disable the installation of rdoc and ri for each gem
+echo "gem: --no-rdoc --no-ri" > ~/.gemrc
+
+gem install bundler
+
+gem install rails
+```
+
+-------
+
+### Git
+
+```shell
+brew install git
+```
+-------
+
+### Suggestions
+
+**Well done!**
+The important stuff should be set up now.
+Here is a list of some useful extensions you can install using `brew`
+
+- cmake
+- docker
+- htop
+- node
+- postgresql
+- webpack
+- yarn
+- zsh-autosuggestions
+- zsh-syntax-highlighting
+
+-------
+
+#### Theming oiptional, and look also for other nice plugins
+
+For a fancy terminal appearance you can use powerlevel10k or whatever floats your boat.
+
+Copy these lines of code one by one into your terminal:
+```bash
+brew install romkatv/powerlevel10k/powerlevel10k
+echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+```
+Restart the terminal and follow the instructions.
+
+-------
+
+#### Imagemagick (for older Rails Apps)
+
+Only install imagemagick if you really need it! Please ask someone before you try to install imagemagick.
+
+```shell
+brew install imagemagick
+```
+
+Or for older Apps:
+
+```shell
+brew install imagemagick@6
+
+brew link imagemagick@6 --force
+```

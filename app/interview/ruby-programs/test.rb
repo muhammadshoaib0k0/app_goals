@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # https://www.interviewbit.com/ruby-on-rails-interview-questions/
 # https://www.youtube.com/watch?v=XzM6MwBJyDE
 # https://www.ideamotive.co/ruby-on-rails/interview

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Question # 3
 
 def check_dup(arr)

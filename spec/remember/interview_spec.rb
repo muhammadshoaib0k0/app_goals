@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 $count_let = 0
 describe 'let' do # I want to be its fails because of learning the concept.
   let(:count_let) { $count_let += 1 }
