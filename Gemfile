@@ -47,6 +47,7 @@ gem 'bootsnap', require: false
 # for mobile app added cors policy
 gem 'rack-cors'
 
+gem 'pundit'
 # Use Sass to process CSS
 # gem "sassc-rails"
 
