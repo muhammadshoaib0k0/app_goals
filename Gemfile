@@ -48,6 +48,8 @@ gem 'bootsnap', require: false
 gem 'rack-cors'
 
 gem 'pundit'
+
+# API and JWT related
 # Use Sass to process CSS
 # gem "sassc-rails"
 
